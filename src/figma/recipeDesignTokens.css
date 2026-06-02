@@ -1,0 +1,29 @@
+/* Recipe Design Tokens */
+
+:root {
+  --page-width: 595px;
+  --page-height: 841px;
+  --page-padding: 24px;
+  --inner-padding-top: 40px;
+  --inner-padding-lr: clamp(20px, calc(64 / 595 * 100%), 64px);
+  --inner-padding-bottom: 24px;
+
+  --border-style: 1px dashed rgba(0, 0, 0, 0.3);
+
+  --section-gap: clamp(16px, 3vh, 32px);
+  --image-height: clamp(100px, 20vh, 200px);
+
+  /* Fixed spacing */
+  --ingredient-row-gap: 4px;
+  --instruction-step-gap: 4px;
+  --step-number-col-width: 18px;
+  --step-number-text-gap: 12px;
+  --unit-name-gap: 4px;
+  --title-subtitle-gap: 4px;
+
+  --category-tag-padding-h: 16px;
+  --category-tag-padding-v: 8px;
+  --category-tag-offset: 3px;
+
+  --image-bg: #e2e2e2;
+}
