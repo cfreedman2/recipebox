@@ -1,25 +1,23 @@
-/* Figma Text Styles */
+/**
+ * Figma text styles — Recipes file node 14:125
+ * https://www.figma.com/design/SX9aoIBRbaarNcB02LS21o/Recipes?node-id=14-125
+ */
 
 .text-style-title {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
   font-size: 34px;
-  line-height: 1.2;
+  line-height: normal;
+  letter-spacing: 0;
 }
 
-.text-style-category-tag {
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.text-style-measurement {
+.text-style-measurement,
+.measurement {
   font-family: 'Manrope', sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 12px;
   line-height: 1.7;
+  letter-spacing: 0;
 }
 
 .text-style-ingredients {
@@ -27,41 +25,22 @@
   font-weight: 600;
   font-size: 12px;
   line-height: 1.7;
+  letter-spacing: 0;
 }
 
 .text-style-instructions {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.88;
+  line-height: 1.7;
+  letter-spacing: 0;
 }
 
-.text-style-step-number {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 200;
-  font-size: 12px;
-  line-height: 1.88;
-}
-
-.text-style-heading2 {
+.text-style-heading-2 {
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
   font-size: 11px;
+  line-height: normal;
   letter-spacing: 0.77px;
   text-transform: uppercase;
-}
-
-.text-style-subtitle {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 200;
-  font-size: 12px;
-  font-optical-sizing: auto;
-}
-
-.text-style-servings {
-  font-family: 'Manrope', sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  text-transform: uppercase;
-  line-height: 1.3;
 }

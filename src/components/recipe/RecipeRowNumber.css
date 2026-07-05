@@ -1,0 +1,24 @@
+.recipe-row-number {
+  flex-shrink: 0;
+  width: var(--figma-row-number-width, 18px);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.recipe-row-number__value {
+  margin: 0;
+}
+
+.recipe-row-number--spacer .recipe-row-number__value:empty::after {
+  content: '\00a0';
+  visibility: hidden;
+}
+
+/* Shared row grid — title, ingredients, and steps share number column + text column */
+.recipe-aligned-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-row-content, var(--figma-gap-row-content, 12px));
+  width: 100%;
+  max-width: var(--figma-steps-width, 388px);
+}

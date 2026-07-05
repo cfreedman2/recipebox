@@ -1,0 +1,24 @@
+.recipe-recipe-header {
+  width: min(100%, var(--figma-page-width, 595px));
+  margin: 0 auto;
+  padding: 0 4px 12px;
+  font-family: 'Manrope', sans-serif;
+  box-sizing: border-box;
+}
+
+.recipe-recipe-header__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #000;
+}
+
+.recipe-recipe-header__category {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

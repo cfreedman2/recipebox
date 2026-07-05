@@ -1,0 +1,31 @@
+/* Figma item (49:97) — inline measurement; wrap aligns with step text column */
+
+.recipe-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-row-content, var(--figma-gap-row-content, 12px));
+  width: 100%;
+}
+
+.recipe-item--no-quantity .recipe-row-number--spacer .recipe-row-number__value {
+  visibility: hidden;
+}
+
+.recipe-item__text {
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  text-align: left;
+  line-height: 1.7;
+}
+
+.recipe-item--section-label .recipe-item__text {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.measurement {
+  font-weight: 200;
+}

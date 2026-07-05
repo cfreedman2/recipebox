@@ -1,0 +1,50 @@
+.recipe-sub-menu {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: min(100%, var(--figma-page-width, 595px));
+  margin: 0 auto 20px;
+  padding: 10px 4px 14px;
+  border-top: 1px solid #ebebeb;
+  font-family: 'Manrope', sans-serif;
+  box-sizing: border-box;
+}
+
+.recipe-sub-menu__action {
+  margin: 0;
+  padding: 0 10px;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.recipe-sub-menu__action:first-child {
+  padding-left: 0;
+}
+
+.recipe-sub-menu__action:last-child {
+  padding-right: 0;
+}
+
+.recipe-sub-menu__action:hover:not(:disabled) {
+  color: #000;
+}
+
+.recipe-sub-menu__action:disabled {
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.recipe-sub-menu__divider {
+  flex-shrink: 0;
+  width: 1px;
+  height: 12px;
+  margin: 0 2px;
+  background: #ddd;
+}

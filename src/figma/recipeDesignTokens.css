@@ -1,29 +1,35 @@
-/* Recipe Design Tokens */
+/**
+ * Figma variables — Recipes node 14:125
+ * Page → 24px → border → inner padding (dynamic via recipeSpacing.js)
+ */
 
-:root {
-  --page-width: 595px;
-  --page-height: 841px;
-  --page-padding: 24px;
-  --inner-padding-top: 40px;
-  --inner-padding-lr: clamp(20px, calc(64 / 595 * 100%), 64px);
-  --inner-padding-bottom: 24px;
+@import './textStyles.css';
 
-  --border-style: 1px dashed rgba(0, 0, 0, 0.3);
-
-  --section-gap: clamp(16px, 3vh, 32px);
-  --image-height: clamp(100px, 20vh, 200px);
-
-  /* Fixed spacing */
-  --ingredient-row-gap: 4px;
-  --instruction-step-gap: 4px;
-  --step-number-col-width: 18px;
-  --step-number-text-gap: 12px;
-  --unit-name-gap: 4px;
-  --title-subtitle-gap: 4px;
-
-  --category-tag-padding-h: 16px;
-  --category-tag-padding-v: 8px;
-  --category-tag-offset: 3px;
-
-  --image-bg: #e2e2e2;
+.recipe-template {
+  --figma-page-width: 595px;
+  --figma-page-height: 841px;
+  --figma-page-padding: 24px;
+  --figma-page-aspect: 210 / 297;
+  /* Inner (inside border) — defaults; overridden per recipe where dynamic */
+  --figma-padding-top: 56px;
+  --figma-page-padding-x: clamp(20px, calc(64 / 595 * 100%), 64px);
+  --figma-card-padding-bottom: 24px;
+  --figma-gap-between-steps: 4px;
+  --figma-gap-row-content: 12px;
+  --figma-gap-measure-text: 4px;
+  --figma-gap-title-subtitle: 4px;
+  --figma-row-number-width: 18px;
+  --figma-row-min-height: 20px;
+  --figma-content-width: 417px;
+  --figma-steps-width: 388px;
+  --figma-optional-width: 419px;
+  --figma-optional-bg: rgba(0, 0, 0, 0.04);
+  --figma-optional-padding-y: 8px;
+  --figma-optional-padding-x: 16px;
+  --figma-image-bg: #e2e2e2;
+  --figma-image-height: 100px;
+  --figma-border-color: rgba(0, 0, 0, 0.3);
+  --figma-category-top: 3px;
+  --figma-category-padding-y: 8px;
+  --figma-category-padding-x: 16px;
 }

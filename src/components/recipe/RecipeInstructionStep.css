@@ -1,0 +1,35 @@
+/* Figma component "Step" (51:343) — instruction row */
+
+.recipe-instruction-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-row-content, var(--figma-gap-row-content, 12px));
+  width: 100%;
+  max-width: var(--figma-steps-width, 388px);
+}
+
+.recipe-instruction-step--header {
+  list-style: none;
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+
+.recipe-instruction-step--header:first-child {
+  margin-top: 0;
+}
+
+.recipe-instruction-step__heading {
+  margin: 0;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.recipe-instruction-step__text {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  line-height: 1.7;
+  white-space: normal;
+  word-break: break-word;
+}

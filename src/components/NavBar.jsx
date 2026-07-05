@@ -1,81 +1,27 @@
-import React from 'react'
+import { useUnitSystem } from '../context/UnitSystemContext'
+import './NavBar.css'
 
-export default function NavBar({ onNewRecipe, unitSystem, onToggleUnit }) {
-  function scrollToRecipes() {
-    const el = document.getElementById('recipe-list')
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-  }
+export function NavBar({ onNewRecipe }) {
+  const { system, toggle } = useUnitSystem()
 
   return (
-    <nav style={styles.nav}>
-      <button style={styles.recipesLink} onClick={scrollToRecipes}>
+    <header className="nav-bar">
+      <a href="#recipes" className="nav-bar__brand">
         Recipes
-      </button>
-      <div style={styles.right}>
+      </a>
+      <div className="nav-bar__actions">
         <button
-          style={styles.unitToggle}
-          onClick={onToggleUnit}
-          title="Toggle unit system"
+          type="button"
+          className="nav-bar__unit-toggle"
+          onClick={toggle}
+          title={system === 'imperial' ? 'Switch to metric (g, kg)' : 'Switch to imperial (oz, lb)'}
         >
-          {unitSystem === 'imperial' ? 'Imperial' : 'Metric'}
+          {system === 'imperial' ? 'oz / lb' : 'g / kg'}
         </button>
-        <button style={styles.newBtn} onClick={onNewRecipe}>
+        <button type="button" className="nav-bar__new" onClick={onNewRecipe}>
           + New Recipe
         </button>
       </div>
-    </nav>
+    </header>
   )
-}
-
-const styles = {
-  nav: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '16px 32px',
-    borderBottom: '1px solid rgba(0,0,0,0.1)',
-    background: '#fff',
-    position: 'sticky',
-    top: 0,
-    zIndex: 100,
-  },
-  recipesLink: {
-    background: 'none',
-    border: 'none',
-    fontFamily: 'Manrope, sans-serif',
-    fontWeight: 400,
-    fontSize: 14,
-    cursor: 'pointer',
-    padding: '4px 0',
-    color: '#000',
-  },
-  right: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: 12,
-  },
-  unitToggle: {
-    background: 'none',
-    border: '1px solid rgba(0,0,0,0.2)',
-    fontFamily: 'Manrope, sans-serif',
-    fontWeight: 400,
-    fontSize: 12,
-    cursor: 'pointer',
-    padding: '6px 12px',
-    borderRadius: 4,
-    color: '#000',
-    textTransform: 'uppercase',
-    letterSpacing: '0.5px',
-  },
-  newBtn: {
-    background: '#000',
-    color: '#fff',
-    border: 'none',
-    fontFamily: 'Manrope, sans-serif',
-    fontWeight: 600,
-    fontSize: 13,
-    cursor: 'pointer',
-    padding: '8px 16px',
-    borderRadius: 4,
-  },
 }
