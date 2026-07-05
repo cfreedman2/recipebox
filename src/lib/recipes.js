@@ -108,13 +108,7 @@ export async function insertRecipes(parsed) {
   }
 
   const userId = await getCurrentUserId()
-  const rows = payloads.map((r) => ({
-    user_id: userId,
-    title: r.title,
-    category: r.category,
-    ingredients: r.ingredients,
-    instructions: r.instructions,
-  }))
+  const rows = payloads.map((r) => ({ user_id: userId, ...r }))
 
   const { data, error } = await (await requireSupabase())
     .from('recipes')
@@ -137,12 +131,7 @@ export async function updateRecipe(updated) {
   const payload = toRecipePayload(updated)
   const { data, error } = await (await requireSupabase())
     .from('recipes')
-    .update({
-      title: payload.title,
-      category: payload.category,
-      ingredients: payload.ingredients,
-      instructions: payload.instructions,
-    })
+    .update({ ...payload, hiddenPages: updated.hiddenPages ?? [] })
     .eq('id', updated.id)
     .eq('user_id', userId)
     .select('*')

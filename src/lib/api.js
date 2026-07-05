@@ -1,4 +1,13 @@
 import { fileToVisionApiDataUrl } from './imageUtils'
+import { getAccessToken } from './auth'
+
+/** JSON headers plus the Supabase session token when signed in. */
+async function buildHeaders() {
+  const headers = { 'Content-Type': 'application/json' }
+  const token = await getAccessToken().catch(() => null)
+  if (token) headers.Authorization = `Bearer ${token}`
+  return headers
+}
 
 export async function fetchParseHealth() {
   const res = await fetch('/api/health')
@@ -13,7 +22,7 @@ export async function fetchParseHealth() {
 export async function parseRecipes(payload) {
   const res = await fetch('/api/parse-recipes', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: await buildHeaders(),
     body: JSON.stringify(payload),
   })
 
@@ -44,7 +53,7 @@ export async function parseRecipeImages(files, extraCategories = []) {
 
   const res = await fetch('/api/parse-recipes', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: await buildHeaders(),
     body: JSON.stringify({ type: 'images', images, extraCategories }),
   })
 

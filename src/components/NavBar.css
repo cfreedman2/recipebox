@@ -62,3 +62,45 @@
 .nav-bar__new:hover {
   background: #333;
 }
+
+.nav-bar__plan {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+}
+
+.nav-bar__plan:hover {
+  border-color: #000;
+  color: #000;
+}
+
+.nav-bar__plan--paid {
+  border-color: #d9c9a3;
+  background: #faf6ec;
+  color: #7a6428;
+  cursor: default;
+}
+
+.nav-bar__signout {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+}
+
+.nav-bar__signout:hover {
+  border-color: #000;
+  color: #000;
+}

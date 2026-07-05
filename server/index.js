@@ -5,6 +5,8 @@ import express from 'express'
 import cors from 'cors'
 import { isGeminiConfigured, getGeminiConfigError, getCandidateModels } from './gemini.js'
 import { parseTextRecipes, parseImageRecipes } from './parseRecipes.js'
+import { requireUserWhenCloud, isSupabaseAdminConfigured } from './supabaseAdmin.js'
+import { createCheckoutSession, handleStripeWebhook, isBillingEnabled } from './billing.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 dotenv.config({ path: path.resolve(__dirname, '../.env') })
@@ -13,6 +15,11 @@ const app = express()
 const PORT = process.env.PORT || 3001
 
 app.use(cors())
+
+// Stripe webhooks are signature-verified against the RAW body, so this route
+// must be registered before the JSON body parser.
+app.post('/api/billing/webhook', express.raw({ type: 'application/json' }), handleStripeWebhook)
+
 app.use(express.json({ limit: '50mb' }))
 
 app.get('/api/health', (_req, res) => {
@@ -23,10 +30,18 @@ app.get('/api/health', (_req, res) => {
     geminiError: gemini ? null : getGeminiConfigError(),
     models: gemini ? getCandidateModels() : null,
     mode: gemini ? 'gemini' : 'local',
+    authRequired: isSupabaseAdminConfigured(),
+    billingEnabled: isBillingEnabled(),
   })
 })
 
-app.post('/api/parse-recipes', async (req, res) => {
+app.get('/api/billing/config', (_req, res) => {
+  res.json({ billingEnabled: isBillingEnabled() })
+})
+
+app.post('/api/billing/create-checkout-session', createCheckoutSession)
+
+app.post('/api/parse-recipes', requireUserWhenCloud(), async (req, res) => {
   try {
     const { type, text, images, extraCategories = [] } = req.body ?? {}
 

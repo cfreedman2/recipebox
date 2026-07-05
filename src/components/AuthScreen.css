@@ -1,0 +1,145 @@
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f2f2f0;
+  font-family: 'Manrope', sans-serif;
+}
+
+.auth-screen__card {
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  padding: 32px 28px;
+}
+
+.auth-screen__brand {
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 6px;
+}
+
+.auth-screen__tagline {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0 0 20px;
+}
+
+.auth-screen__tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 18px;
+}
+
+.auth-screen__tab {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #888;
+  cursor: pointer;
+}
+
+.auth-screen__tab--active {
+  color: #000;
+  border-bottom-color: #000;
+}
+
+.auth-screen__recovery-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+.auth-screen__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-screen__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.auth-screen__field span {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #444;
+}
+
+.auth-screen__field input {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  padding: 9px 11px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.auth-screen__field input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.auth-screen__submit {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-screen__submit:hover:not(:disabled) {
+  background: #222;
+}
+
+.auth-screen__submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.auth-screen__forgot {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  background: none;
+  border: none;
+  color: #666;
+  text-decoration: underline;
+  cursor: pointer;
+  align-self: center;
+}
+
+.auth-screen__notice {
+  font-size: 13px;
+  color: #1a6b2f;
+  background: #eef8f0;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin: 0;
+}
+
+.auth-screen__error {
+  font-size: 13px;
+  color: #a5231f;
+  background: #fdf0ef;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin: 0;
+}
